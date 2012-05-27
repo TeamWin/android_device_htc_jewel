@@ -36,6 +36,8 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_PREBUILT_KERNEL := device/htc/jewel/kernAl
 
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
+
 # Recovery:Start
 
 # Use this flag if the board has a ext4 partition larger than 2gb
