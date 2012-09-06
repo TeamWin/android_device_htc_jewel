@@ -24,5 +24,7 @@ PRODUCT_COPY_FILES += \
     device/htc/jewel/recovery/sbin/power_test:recovery/root/sbin/power_test \
     device/htc/jewel/recovery/sbin/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
-$(call inherit-product, build/target/product/full.mk)
+#$(call inherit-product, build/target/product/full.mk)
 
+PRODUCT_NAME := htc_jewel
+PRODUCT_BRAND := HTC

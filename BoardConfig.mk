@@ -36,7 +36,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_PREBUILT_KERNEL := device/htc/jewel/kernAl
 
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 
 # Recovery:Start
 
@@ -54,3 +54,6 @@ TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 TW_EXTERNAL_STORAGE_PATH := "/sdcard2"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard2"
 TW_FLASH_FROM_STORAGE := true
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+TW_INCLUDE_DUMLOCK := true
+
