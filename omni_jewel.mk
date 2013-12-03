@@ -1,14 +1,14 @@
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/omni/config/cdma.mk)
 
 # Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+$(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/htc/jewel/jewel.mk)
 
 # Device naming
 PRODUCT_DEVICE := jewel
-PRODUCT_NAME := cm_jewel
+PRODUCT_NAME := omni_jewel
 PRODUCT_BRAND := htc
 PRODUCT_MODEL := EVO
 PRODUCT_MANUFACTURER := HTC
@@ -23,4 +23,4 @@ PRODUCT_RELEASE_NAME := jewel
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
--include vendor/cm/config/common_versions.mk
+-include vendor/omni/config/common_versions.mk

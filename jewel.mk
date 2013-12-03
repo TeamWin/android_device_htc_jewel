@@ -80,11 +80,7 @@ PRODUCT_PACKAGES += \
 
 # Torch
 PRODUCT_PACKAGES += \
-    Torch
-
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-    e2fsck
+    OmniTorch
 
 # Permissions
 PRODUCT_COPY_FILES += \
