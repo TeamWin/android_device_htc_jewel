@@ -27,6 +27,11 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     remount.qcom
 
+PRODUCT_COPY_FILES += \
+    device/htc/jewel/kernel:kernel \
+    device/htc/jewel/rootdir/etc/twrp.fstab.unifiedstorage:recovery/root/etc/twrp.fstab.unifiedstorage \
+    device/htc/jewel/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+
 # Sound configs
 PRODUCT_COPY_FILES += \
     device/htc/jewel/dsp/soundimage/srs_bypass.cfg:system/etc/soundimage/srs_bypass.cfg \
@@ -60,7 +65,10 @@ PRODUCT_COPY_FILES += \
 # Recovery
 PRODUCT_COPY_FILES += \
     device/htc/jewel/rootdir/etc/fstab.qcom:recovery/root/fstab.qcom \
-    device/htc/jewel/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+    device/htc/jewel/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab \
+    device/htc/jewel/rootdir/etc/twrp.fstab.unifiedstorage:recovery/root/etc/twrp.fstab.unifiedstorage \
+    device/htc/jewel/rootdir/etc/init.recovery.qcom.rc:recovery/root/init.recovery.qcom.rc \
+    device/htc/jewel/rootdir/fstab_swap.sh:recovery/root/sbin/fstab_swap.sh
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)

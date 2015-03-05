@@ -1,0 +1,18 @@
+on boot
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/functions mass_storage,adb
+    write /sys/class/android_usb/android0/enable 1
+    setprop usb.vendor 0bb4
+    setprop usb.product.adb 0ff9
+    setprop usb.product.mtpadb 0ca8
+
+service fstab_swap /sbin/fstab_swap.sh
+    oneshot
+    disabled
+
+# Switch out fstab on jewel if unified storage is present
+on property:ro.bootloader=2.10.5555
+    start fstab_swap
+
+on property:ro.bootloader=2.10.0000
+    start fstab_swap

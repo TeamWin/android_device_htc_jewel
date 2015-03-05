@@ -31,7 +31,7 @@
 TARGET_BOOTLOADER_BOARD_NAME := jewel
 
 # Kernel
-TARGET_KERNEL_CONFIG := jet_defconfig
+#TARGET_KERNEL_CONFIG := jet_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/jewel/bluetooth
@@ -80,13 +80,16 @@ TARGET_RECOVERY_FSTAB := device/htc/jewel/rootdir/etc/fstab.qcom
 
 # TWRP
 DEVICE_RESOLUTION := 720x1280
-TW_FLASH_FROM_STORAGE := true
-TW_DEFAULT_EXTERNAL_STORAGE := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TW_INTERNAL_STORAGE_PATH := "/sdcard"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
-TW_EXTERNAL_STORAGE_PATH := "/external_sd"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_INCLUDE_DUMLOCK := true
-TW_INCLUDE_JB_CRYPTO := true
+#TW_INCLUDE_JB_CRYPTO := true
+#TW_BRIGHTNESS_PATH := "/sys/devices/platform/msm_fb.590337/leds/lcd-backlight/brightness"
+TW_NO_SCREEN_BLANK := true
+#TW_MAX_BRIGHTNESS := 255
+#RECOVERY_SDCARD_ON_DATA := true
+#TW_DISABLE_TTF := true
+#TW_USE_TOOLBOX := true
+#TARGET_RECOVERY_DEVICE_MODULES += fstab.qcom twrp.fstab
+TARGET_RECOVERY_DEVICE_DIRS += device/htc/jewel/blah/blah2
+
