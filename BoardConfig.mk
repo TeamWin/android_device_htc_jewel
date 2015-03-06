@@ -24,14 +24,23 @@
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
 
-# inherit from S4 common
--include device/htc/s4-common/BoardConfigCommon.mk
+# Architecture
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_SMP := true
+TARGET_CPU_VARIANT := krait
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := jewel
 
 # Kernel
-#TARGET_KERNEL_CONFIG := jet_defconfig
+BOARD_KERNEL_BASE := 0x80400000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom androidboot.selinux=permissive
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01400000
+TARGET_PREBUILT_KERNEL := device/htc/jewel/recovery/kernel
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/jewel/bluetooth
@@ -66,6 +75,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776704
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1744829440
@@ -77,19 +87,12 @@ BOARD_VOLD_MAX_PARTITIONS := 39
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/htc/jewel/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_INITRC := device/htc/jewel/recovery/init.rc
 
 # TWRP
 DEVICE_RESOLUTION := 720x1280
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TW_INCLUDE_DUMLOCK := true
-#TW_INCLUDE_JB_CRYPTO := true
-#TW_BRIGHTNESS_PATH := "/sys/devices/platform/msm_fb.590337/leds/lcd-backlight/brightness"
+TW_INCLUDE_L_CRYPTO := true
 TW_NO_SCREEN_BLANK := true
-#TW_MAX_BRIGHTNESS := 255
-#RECOVERY_SDCARD_ON_DATA := true
-#TW_DISABLE_TTF := true
-#TW_USE_TOOLBOX := true
-#TARGET_RECOVERY_DEVICE_MODULES += fstab.qcom twrp.fstab
-TARGET_RECOVERY_DEVICE_DIRS += device/htc/jewel/blah/blah2
-

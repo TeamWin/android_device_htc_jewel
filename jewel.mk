@@ -16,21 +16,30 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# common S4 configs
-$(call inherit-product, device/htc/s4-common/s4.mk)
-
 DEVICE_PACKAGE_OVERLAYS += device/htc/jewel/overlay
 
 # Boot ramdisk setup
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.qcom.sh \
+    init.qcom.usb.rc \
+    init.qcom.rc \
     init.target.rc \
-    remount.qcom
+    remount.qcom \
+    ueventd.qcom.rc
 
-PRODUCT_COPY_FILES += \
-    device/htc/jewel/kernel:kernel \
-    device/htc/jewel/rootdir/etc/twrp.fstab.unifiedstorage:recovery/root/etc/twrp.fstab.unifiedstorage \
-    device/htc/jewel/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+# Recovery
+PRODUCT_PACKAGES += \
+    chargeled \
+    choice_fn \
+    detect_key \
+    fstab_swap.sh \
+    init.recovery.qcom.rc \
+    offmode_charging \
+    offmode_charging_res_images \
+    power_test \
+    twrp.fstab \
+    twrp.fstab.unifiedstorage
 
 # Sound configs
 PRODUCT_COPY_FILES += \
@@ -61,14 +70,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/jewel/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
     device/htc/jewel/idc/projector_input.idc:system/usr/idc/projector_input.idc
-
-# Recovery
-PRODUCT_COPY_FILES += \
-    device/htc/jewel/rootdir/etc/fstab.qcom:recovery/root/fstab.qcom \
-    device/htc/jewel/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab \
-    device/htc/jewel/rootdir/etc/twrp.fstab.unifiedstorage:recovery/root/etc/twrp.fstab.unifiedstorage \
-    device/htc/jewel/rootdir/etc/init.recovery.qcom.rc:recovery/root/init.recovery.qcom.rc \
-    device/htc/jewel/rootdir/fstab_swap.sh:recovery/root/sbin/fstab_swap.sh
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
