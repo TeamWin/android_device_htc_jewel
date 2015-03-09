@@ -40,6 +40,8 @@ PRODUCT_PACKAGES += \
     power_test \
     twrp.fstab \
     twrp.fstab.unifiedstorage
+PRODUCT_COPY_FILES += \
+    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
 # Sound configs
 PRODUCT_COPY_FILES += \
