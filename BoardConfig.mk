@@ -90,9 +90,9 @@ TARGET_RECOVERY_FSTAB := device/htc/jewel/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_INITRC := device/htc/jewel/recovery/init.rc
 
 # TWRP
-DEVICE_RESOLUTION := 720x1280
+TW_THEME := portrait_hdpi
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TW_INCLUDE_DUMLOCK := true
-TW_INCLUDE_L_CRYPTO := true
+TW_INCLUDE_CRYPTO := true
 TW_NO_SCREEN_BLANK := true
