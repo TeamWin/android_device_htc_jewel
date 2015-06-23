@@ -30,16 +30,7 @@ PRODUCT_PACKAGES += \
 
 # Recovery
 PRODUCT_PACKAGES += \
-    chargeled \
-    choice_fn \
-    detect_key \
-    fstab_swap.sh \
-    init.recovery.qcom.rc \
-    offmode_charging \
-    offmode_charging_res_images \
-    power_test \
-    twrp.fstab \
-    twrp.fstab.unifiedstorage
+    chargeled
 PRODUCT_COPY_FILES += \
     bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
