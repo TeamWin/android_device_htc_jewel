@@ -5,11 +5,12 @@ on boot
     start choice_fn
     start chargeled
 
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/functions mass_storage,adb
+    write /sys/class/android_usb/android0/idVendor 0bb4
+    write /sys/class/android_usb/android0/idProduct 0ca8
     write /sys/class/android_usb/android0/enable 1
     setprop usb.vendor 0bb4
-    setprop usb.product.adb 0ff9
+    setprop usb.product.adb 0df5
+    setprop usb.product.mass_storageadb 0ff9
     setprop usb.product.mtpadb 0ca8
 
 # Switch out fstab on jewel if unified storage is present
